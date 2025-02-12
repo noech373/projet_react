@@ -43,6 +43,10 @@ frontend/
 │   │       ├── Home.tsx
 │   │       ├── Home.styles.ts
 │   │       └── index.ts
+|   |   └── Detailed_page/
+|   |       ├── Detailed_page.tsx
+│   │       ├── Detailed_page.styles.ts
+│   │       └── Detailed_page.ts
 │   ├── services/
 │   │   └── api/
 │   │       ├── events.service.ts
