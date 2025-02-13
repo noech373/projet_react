@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useEvents } from "../../hooks/useEvents";
 import EventFilterBar from "../../components/events/EventFilterBar";
 import { IEventFilters } from "../../interfaces/EventsFilter.interface";
@@ -6,9 +6,13 @@ import LoadingSpinner from "../../components/common/LoadingSpinner";
 import ErrorMessage from "../../components/common/ErrorMessage";
 import { Link } from "react-router-dom";
 import SearchBar from "../../components/events/SearchBar";
+import Pagination from "../../components/common/Pagination";
 
 export const Home = () => {
   const { events, loading, error } = useEvents();
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 6;
+  
   const [filters, setFilters] = useState<IEventFilters>({
     searchQuery: "",
     category: "all",
@@ -56,6 +60,18 @@ export const Home = () => {
     return result;
   }, [events, filters]);
 
+  // Calcul de la pagination
+  const totalPages = Math.ceil(filteredEvents.length / ITEMS_PER_PAGE);
+  const paginatedEvents = filteredEvents.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
+  // Reset la page quand les filtres changent
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filters]);
+
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorMessage message={error} />;
 
@@ -78,7 +94,7 @@ export const Home = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredEvents.map((event) => (
+        {paginatedEvents.map((event) => (
           <div 
             key={event.id}
             className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105"
@@ -110,6 +126,14 @@ export const Home = () => {
           </div>
         ))}
       </div>
+
+      {totalPages > 1 && (
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
+      )}
     </div>
   );
 };
