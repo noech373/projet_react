@@ -1,6 +1,5 @@
 import { FC } from 'react';
-import { IEventFilters} from '../../../interfaces/EventsFilter.interface';
-import  { EventCategory } from '../../../interfaces/Event.interface';
+import { IEventFilters, EventCategory } from '../../../interfaces/EventsFilter.interface';
 
 interface EventFilterProps {
   filters: IEventFilters;
