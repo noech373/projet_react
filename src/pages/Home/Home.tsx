@@ -11,13 +11,13 @@ import Pagination from "../../components/common/Pagination";
 export const Home = () => {
   const { events, loading, error } = useEvents();
   const [currentPage, setCurrentPage] = useState(1);
-  const ITEMS_PER_PAGE = 6;
   
   const [filters, setFilters] = useState<IEventFilters>({
     searchQuery: "",
     category: "all",
     dateFilter: "all",
-    priceSort: "none"
+    priceSort: "none",
+    eventsPerPage: 6 
   });
 
   const filteredEvents = useMemo(() => {
@@ -60,11 +60,11 @@ export const Home = () => {
     return result;
   }, [events, filters]);
 
-  // Calcul de la pagination
-  const totalPages = Math.ceil(filteredEvents.length / ITEMS_PER_PAGE);
+  // Utiliser filters.eventsPerPage au lieu de ITEMS_PER_PAGE
+  const totalPages = Math.ceil(filteredEvents.length / filters.eventsPerPage);
   const paginatedEvents = filteredEvents.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
+    (currentPage - 1) * filters.eventsPerPage,
+    currentPage * filters.eventsPerPage
   );
 
   // Reset la page quand les filtres changent
@@ -81,10 +81,12 @@ export const Home = () => {
         Événements à venir
       </h1>
       
-      <EventFilterBar
-        filters={filters}
-        onFilterChange={(newFilters) => setFilters(prev => ({ ...prev, ...newFilters }))}
-      />
+      <div className="flex flex-wrap gap-4 items-center">
+        <EventFilterBar
+          filters={filters}
+          onFilterChange={(newFilters) => setFilters(prev => ({ ...prev, ...newFilters }))}
+        />
+      </div>
 
       <div className="max-w-2xl mx-auto mb-8">
         <SearchBar 
