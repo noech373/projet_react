@@ -96,9 +96,21 @@ const Calendar = () => {
 
       {selectedCategory && (
         <div className="space-y-6">
-          <h1 className="text-3xl font-bold mb-6">
-            Calendrier des {selectedCategory === 'Musique' ? 'Concerts' : 'Événements Sportifs'}
-          </h1>
+          <div className="flex justify-between items-center mb-6">
+            <h1 className="text-3xl font-bold">
+              Calendrier des {selectedCategory === 'Musique' ? 'Concerts' : 'Événements Sportifs'}
+            </h1>
+            <button
+              onClick={() => setSelectedCategory(selectedCategory === 'Musique' ? 'Sport' : 'Musique')}
+              className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+                selectedCategory === 'Musique'
+                  ? 'bg-green-500 hover:bg-green-600 text-white'
+                  : 'bg-purple-500 hover:bg-purple-600 text-white'
+              }`}
+            >
+              Basculer vers {selectedCategory === 'Musique' ? 'Sport' : 'Concerts'}
+            </button>
+          </div>
 
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
             <div className="flex items-center justify-between mb-4">
@@ -162,25 +174,23 @@ const Calendar = () => {
                   {date && (
                     <>
                       <div className="text-right text-sm mb-1">
-                        {date.getDate()}
-                      </div>
-                      <div className="space-y-1 max-h-[80px] overflow-y-auto">
-                        {getEventsForDate(date).map(event => (
-                          <div
-                            key={event.id}
-                            className={`text-xs p-1 rounded cursor-pointer hover:opacity-80 ${
-                              event.category === 'Musique'
-                                ? 'bg-purple-100 dark:bg-purple-800'
-                                : 'bg-green-100 dark:bg-green-800'
-                            }`}
-                            onClick={() => handleEventClick(event)}
-                          >
-                            {event.title.length > 15 
-                              ? `${event.title.substring(0, 15)}...` 
-                              : event.title}
-                          </div>
-                        ))}
-                      </div>
+                    {date.getDate()}
+                    </div>
+                    <div className="space-y-1 max-h-[80px] overflow-y-auto">
+                    {getEventsForDate(date).map(event => (
+                        <div
+                        key={event.id}
+                        className={`text-xs p-1 rounded cursor-pointer hover:opacity-80 ${
+                            event.category === 'Musique'
+                            ? 'bg-purple-100 dark:bg-purple-800'
+                            : 'bg-green-100 dark:bg-green-800'
+                        }`}
+                        title={event.title}
+                        >
+                        <span className="whitespace-normal text-overflow-clip">{event.title}</span>
+                        </div>
+                    ))}
+                    </div>
                     </>
                   )}
                 </div>
