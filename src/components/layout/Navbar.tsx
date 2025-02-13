@@ -12,6 +12,9 @@ export const Navbar = () => {
             <Link to="/" className="text-gray-600 hover:text-gray-900">
               Accueil
             </Link>
+            <Link to="/calendar" className="text-gray-600 hover:text-gray-900">
+              Calendrier
+            </Link>
             <Link to="/cart" className="text-gray-600 hover:text-gray-900">
               Panier
             </Link>

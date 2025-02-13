@@ -80,7 +80,6 @@ export const Home = () => {
       <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
         Événements à venir
       </h1>
-      
       <div className="flex flex-wrap gap-4 items-center">
         <EventFilterBar
           filters={filters}

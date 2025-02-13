@@ -11,13 +11,13 @@ const EventFilterBar: React.FC<EventFilterBarProps> = ({ filters, onFilterChange
     <div className="flex flex-wrap gap-4">
       <select
         value={filters.category}
-        onChange={(e) => onFilterChange({ category: e.target.value as EventCategory | 'all' })}
+        onChange={(e) => onFilterChange({ category: e.target.value as EventCategory })}
         className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
       >
         <option value="all">Toutes catégories</option>
-        <option value={EventCategory.CONCERT}>Concerts</option>
-        <option value={EventCategory.CONFERENCE}>Conférences</option>
-        <option value={EventCategory.WORKSHOP}>Ateliers</option>
+        <option value="concert">Concerts</option>
+        <option value="theatre">Théâtre</option>
+        <option value="sport">Sport</option>
       </select>
 
       <select
@@ -39,7 +39,6 @@ const EventFilterBar: React.FC<EventFilterBarProps> = ({ filters, onFilterChange
         <option value="asc">Prix: Croissant</option>
         <option value="desc">Prix: Décroissant</option>
       </select>
-
       <select
         value={filters.eventsPerPage}
         onChange={(e) => onFilterChange({ eventsPerPage: Number(e.target.value) })}
