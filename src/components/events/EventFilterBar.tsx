@@ -39,6 +39,15 @@ const EventFilterBar: React.FC<EventFilterBarProps> = ({ filters, onFilterChange
         <option value="asc">Prix: Croissant</option>
         <option value="desc">Prix: Décroissant</option>
       </select>
+      <select
+        value={filters.eventsPerPage}
+        onChange={(e) => onFilterChange({ eventsPerPage: Number(e.target.value) })}
+        className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+      >
+        <option value={6}>6 par page</option>
+        <option value={12}>12 par page</option>
+        <option value={100}>100 par page</option>
+      </select>
     </div>
   );
 };
