@@ -1,14 +1,26 @@
 {
-  "posts": {
-    "1": {
-      "id": 1,
-      "title": "Post 1",
-      "content": "Content 1"
-    },
-    "2": {
-      "id": 2,
-      "title": "Post 2",
-      "content": "Content 2"
-    }
-  }
+  
+    "events": [
+      {
+        "id": 1,
+        "title": "Événement 1",
+        "category": "Musique",
+        "date": "2025-03-01",
+        "price": 10
+      },
+      {
+        "id": 2,
+        "title": "Événement 2",
+        "category": "Sport",
+        "date": "2025-04-10",
+        "price": 20
+      }
+    ],
+  
+    "posts": [
+      { "id": 1, "title": "Premier post", "content": "Contenu du premier post" },
+      { "id": 2, "title": "Deuxième post", "content": "Contenu du deuxième post" }
+    ]
+  
+  
 }
