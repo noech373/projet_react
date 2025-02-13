@@ -9,7 +9,9 @@
         "location": "Domaine de Saint-Cloud, Paris",
         "category": "concert",
         "price": 89,
-        "image": "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=800"
+        "image": "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=800",
+        "availableSeats": 40000,
+        "organizer": "Live Nation France"
       },
       {
         "id": "2",
@@ -19,7 +21,9 @@
         "location": "Stade Roland Garros, Paris",
         "category": "sport",
         "price": 145,
-        "image": "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=800"
+        "image": "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=800",
+        "availableSeats": 15000,
+        "organizer": "Fédération Française de Tennis"
       },
       {
         "id": "3",
@@ -29,7 +33,9 @@
         "location": "Comédie Française, Paris",
         "category": "theatre",
         "price": 65,
-        "image": "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800"
+        "image": "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800",
+        "availableSeats": 2000,
+        "organizer": "Comédie-Française"
       },
       {
         "id": "4",
@@ -40,7 +46,8 @@
         "image": "https://cdn-s-www.leprogres.fr/images/BADBDA7F-58E4-4E7C-A835-F0FE268409D1/NW_raw/en-2018-222-000-spectateurs-ont-assiste-aux-concerts-de-jazz-a-vienne-sur-les-differentes-scenes-du-festival-et-la-palme-revient-au-theatre-antique-il-a-accueilli-a-lui-seul-82-000-personnes-photo-le-dl-daniel-durand-1561659098.jpg",
         "location": "Berges de Seine, Paris",
         "description": "Une soirée exceptionnelle de jazz en plein air avec les meilleurs artistes internationaux.",
-        "availableSeats": 200
+        "availableSeats": 200,
+        "organizer": "Association Jazz à Paris"
       },
       {
         "id": "5",
@@ -106,7 +113,8 @@
         "category": "theatre",
         "price": 22,
         "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800",
-        "availableSeats": 8000
+        "availableSeats": 8000,
+        "organizer": "Musée d'Orsay"
       },
       {
         "id": "11",
@@ -337,7 +345,8 @@
         "category": "concert",
         "price": 55,
         "image": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=800",
-        "availableSeats": 8000
+        "availableSeats": 8000,
+        "organizer": "Jazz à Vienne"
       },
       {
         "id": "32",
@@ -348,7 +357,8 @@
         "category": "sport",
         "price": 25,
         "image": "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=800",
-        "availableSeats": 3000
+        "availableSeats": 3000,
+        "organizer": "Fédération Française de Natation"
       },
       {
         "id": "33",
@@ -359,7 +369,8 @@
         "category": "theatre",
         "price": 120,
         "image": "https://images.unsplash.com/photo-1581974944026-5d6ed762f617?w=800",
-        "availableSeats": 2745
+        "availableSeats": 2745,
+        "organizer": "Opéra national de Paris"
       },
       {
         "id": "34",
@@ -370,7 +381,8 @@
         "category": "concert",
         "price": 65,
         "image": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",
-        "availableSeats": 45000
+        "availableSeats": 45000,
+        "organizer": "Garorock Productions"
       },
       {
         "id": "35",
@@ -381,7 +393,8 @@
         "category": "sport",
         "price": 80,
         "image": "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800",
-        "availableSeats": 30681
+        "availableSeats": 30681,
+        "organizer": "Fédération Française de Handball"
       },
       {
         "id": "36",
@@ -392,7 +405,8 @@
         "category": "theatre",
         "price": 18,
         "image": "https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?w=800",
-        "availableSeats": 1500
+        "availableSeats": 1500,
+        "organizer": "Centre Pompidou"
       },
       {
         "id": "37",
@@ -403,7 +417,8 @@
         "category": "concert",
         "price": 89,
         "image": "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800",
-        "availableSeats": 75000
+        "availableSeats": 75000,
+        "organizer": "Live Nation France"
       },
       {
         "id": "38",
@@ -414,7 +429,8 @@
         "category": "sport",
         "price": 15,
         "image": "https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=800",
-        "availableSeats": 25000
+        "availableSeats": 25000,
+        "organizer": "Amaury Sport Organisation"
       },
       {
         "id": "39",
@@ -425,7 +441,8 @@
         "category": "theatre",
         "price": 140,
         "image": "https://images.unsplash.com/photo-1580809361436-42a7ec204889?w=800",
-        "availableSeats": 1380
+        "availableSeats": 1380,
+        "organizer": "Festival International d'Art Lyrique"
       },
       {
         "id": "40",
@@ -436,7 +453,8 @@
         "category": "concert",
         "price": 59,
         "image": "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800",
-        "availableSeats": 30000
+        "availableSeats": 30000,
+        "organizer": "Association John"
       },
       {
         "id": "41",
@@ -447,7 +465,8 @@
         "category": "sport",
         "price": 20,
         "image": "https://images.unsplash.com/photo-1566796195789-d5a59f96e4f9?w=800",
-        "availableSeats": 1200
+        "availableSeats": 1200,
+        "organizer": "Fédération Française d'Escrime"
       },
       {
         "id": "42",
@@ -458,7 +477,8 @@
         "category": "theatre",
         "price": 5,
         "image": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800",
-        "availableSeats": 12000
+        "availableSeats": 12000,
+        "organizer": "Syndicat National de l'Édition"
       },
       {
         "id": "43",
@@ -469,7 +489,8 @@
         "category": "concert",
         "price": 95,
         "image": "https://images.unsplash.com/photo-1524650359799-842906ca1c06?w=800",
-        "availableSeats": 40000
+        "availableSeats": 40000,
+        "organizer": "Live Nation France"
       },
       {
         "id": "44",
@@ -480,7 +501,8 @@
         "category": "sport",
         "price": 150,
         "image": "https://images.unsplash.com/photo-1515089836358-4c06e3b50c80?w=800",
-        "availableSeats": 65000
+        "availableSeats": 65000,
+        "organizer": "GIP Grand Prix de France"
       },
       {
         "id": "45",
@@ -491,7 +513,8 @@
         "category": "theatre",
         "price": 16,
         "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800",
-        "availableSeats": 2000
+        "availableSeats": 2000,
+        "organizer": "Biennale de Lyon"
       },
       {
         "id": "46",
@@ -502,7 +525,8 @@
         "category": "concert",
         "price": 45,
         "image": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800",
-        "availableSeats": 20000
+        "availableSeats": 20000,
+        "organizer": "Association Orane"
       },
       {
         "id": "47",
@@ -513,7 +537,8 @@
         "category": "sport",
         "price": 95,
         "image": "https://images.unsplash.com/photo-1531852724420-f0fe8bb6c26b?w=800",
-        "availableSeats": 80000
+        "availableSeats": 80000,
+        "organizer": "Fédération Française de Rugby"
       },
       {
         "id": "48",
@@ -524,7 +549,8 @@
         "category": "theatre",
         "price": 25,
         "image": "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800",
-        "availableSeats": 35000
+        "availableSeats": 35000,
+        "organizer": "SEFA Event"
       },
       {
         "id": "49",
@@ -535,7 +561,8 @@
         "category": "concert",
         "price": 65,
         "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800",
-        "availableSeats": 40000
+        "availableSeats": 40000,
+        "organizer": "We Love Green Organisation"
       },
       {
         "id": "50",
@@ -546,7 +573,8 @@
         "category": "sport",
         "price": 40,
         "image": "https://images.unsplash.com/photo-1566241440091-ec10de8db2e1?w=800",
-        "availableSeats": 15000
+        "availableSeats": 15000,
+        "organizer": "Fédération Française de Gymnastique"
       },
       {
         "id": "51",
@@ -557,7 +585,8 @@
         "category": "theatre",
         "price": 15,
         "image": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800",
-        "availableSeats": 50000
+        "availableSeats": 50000,
+        "organizer": "CENECA"
       },
       {
         "id": "52",
@@ -568,7 +597,8 @@
         "category": "concert",
         "price": 42,
         "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800",
-        "availableSeats": 25000
+        "availableSeats": 25000,
+        "organizer": "FLaP - Flap Production"
       },
       {
         "id": "53",
@@ -579,7 +609,8 @@
         "category": "sport",
         "price": 70,
         "image": "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=800",
-        "availableSeats": 20000
+        "availableSeats": 20000,
+        "organizer": "Fédération Française de Tennis"
       },
       {
         "id": "54",
@@ -590,7 +621,8 @@
         "category": "theatre",
         "price": 30,
         "image": "https://images.unsplash.com/photo-1612036782180-6f0822045d23?w=800",
-        "availableSeats": 18000
+        "availableSeats": 18000,
+        "organizer": "Reed Expositions France"
       },
       {
         "id": "55",
@@ -601,7 +633,8 @@
         "category": "concert",
         "price": 39,
         "image": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",
-        "availableSeats": 15000
+        "availableSeats": 15000,
+        "organizer": "Wild Rose"
       },
       {
         "id": "56",
@@ -612,7 +645,8 @@
         "category": "sport",
         "price": 35,
         "image": "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800",
-        "availableSeats": 4000
+        "availableSeats": 4000,
+        "organizer": "Fédération Française de Boxe"
       },
       {
         "id": "57",
@@ -623,7 +657,8 @@
         "category": "theatre",
         "price": 200,
         "image": "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800",
-        "availableSeats": 2300
+        "availableSeats": 2300,
+        "organizer": "Association Française du Festival International du Film"
       },
       {
         "id": "58",
@@ -634,7 +669,8 @@
         "category": "concert",
         "price": 55,
         "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800",
-        "availableSeats": 35000
+        "availableSeats": 35000,
+        "organizer": "Territoire de Musiques"
       },
       {
         "id": "59",
@@ -645,7 +681,8 @@
         "category": "sport",
         "price": 25,
         "image": "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800",
-        "availableSeats": 20000
+        "availableSeats": 20000,
+        "organizer": "Fédération Française d'Athlétisme"
       },
       {
         "id": "60",
@@ -656,7 +693,8 @@
         "category": "concert",
         "price": 45,
         "image": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",
-        "availableSeats": 15000
+        "availableSeats": 15000,
+        "organizer": "Quai Ouest Musiques"
       }
     ]
   
