@@ -1,26 +1,45 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-import { events } from "../../data/Event"; // Import de la liste d'événements
+import { useEvents } from "../../hooks/useEvents";
 import EventDetails from "./EventDetails";
 import ReservationForm from "./ReservationForm";
+import { useCart } from "../../contexts/CartContext";
+import LoadingSpinner from "../../components/common/LoadingSpinner";
+import ErrorMessage from "../../components/common/ErrorMessage";
 
 const DetailedPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const event = events.find(e => e.id === parseInt(id || "0"));
+  const { events, loading, error } = useEvents();
+  const { addToCart } = useCart();
 
-  const [availableSeats, setAvailableSeats] = useState(event ? event.availableSeats : 0);
+  if (loading) return <LoadingSpinner />;
+  if (error) return <ErrorMessage message={error} />;
 
-  if (!event) return <p>Événement introuvable</p>;
+  const event = events.find(e => e.id === id);
 
-  const handleReservation = (name: string, email: string, seats: number) => {
-    alert(`Réservation confirmée pour ${name} (${email}), ${seats} place(s) !`);
-    setAvailableSeats(availableSeats - seats);
-  };
+  if (!event) {
+    return <ErrorMessage message="Événement introuvable" />;
+  }
 
   return (
-    <div>
-      <EventDetails event={{ ...event, availableSeats }} />
-      <ReservationForm availableSeats={availableSeats} onReserve={handleReservation} />
+    <div className="container mx-auto px-4 py-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-white rounded-lg shadow-lg p-6">
+        <EventDetails event={event} />
+        <div className="lg:border-l lg:pl-8">
+          <ReservationForm 
+            availableSeats={event.availableSeats}
+            onReserve={(name, email, seats) => {
+              addToCart({
+                eventId: event.id,
+                eventTitle: event.title,
+                eventDate: event.date,
+                quantity: seats,
+                price: event.price
+              });
+            }}
+          />
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,17 +1,16 @@
 export interface IEvent {
-    id: string;
-    title: string;
-    date: Date;
-    location: string;
-    price: number;
-    image: string;
-    category: EventCategory;
-    description: string;
-  }
-  
+  id: string;
+  title: string;
+  category: EventCategory;
+  date: string;
+  price: number;
+  image?: string;
+  location?: string;
+  description?: string;
+  availableSeats?: number;
+}
+
 export enum EventCategory {
-    CONCERT = 'concert',
-    CONFERENCE = 'conference',
-    WORKSHOP = 'workshop'
-  }
-export default EventCategory;
+  CONCERT = 'Musique',
+  SPORT = 'Sport'
+}

@@ -2,24 +2,71 @@
   
     "events": [
       {
-        "id": 1,
-        "title": "Événement 1",
+        "id": "1",
+        "title": "Festival Jazz à la Seine",
         "category": "Musique",
         "date": "2025-03-01",
-        "price": 10
+        "price": 45,
+        "image": "https://picsum.photos/800/600?random=1",
+        "location": "Berges de Seine, Paris",
+        "description": "Une soirée exceptionnelle de jazz en plein air avec les meilleurs artistes internationaux.",
+        "availableSeats": 200
       },
       {
-        "id": 2,
-        "title": "Événement 2",
+        "id": "2",
+        "title": "Marathon de Paris",
         "category": "Sport",
         "date": "2025-04-10",
-        "price": 20
+        "price": 80,
+        "image": "https://picsum.photos/800/600?random=2",
+        "location": "Champs-Élysées, Paris",
+        "description": "Le plus grand marathon de France, parcourant les plus beaux monuments de Paris.",
+        "availableSeats": 1000
+      },
+      {
+        "id": "3",
+        "title": "Concert Symphonique - Mozart",
+        "category": "Musique",
+        "date": "2025-05-15",
+        "price": 65,
+        "image": "https://picsum.photos/800/600?random=3",
+        "location": "Philharmonie de Paris",
+        "description": "Un concert exceptionnel dédié aux œuvres les plus célèbres de Mozart.",
+        "availableSeats": 150
+      },
+      {
+        "id": "4",
+        "title": "Roland Garros 2025 - Finale",
+        "category": "Sport",
+        "date": "2025-06-08",
+        "price": 200,
+        "image": "https://picsum.photos/800/600?random=4",
+        "location": "Stade Roland Garros, Paris",
+        "description": "La finale du plus prestigieux tournoi de tennis sur terre battue.",
+        "availableSeats": 500
+      },
+      {
+        "id": "5",
+        "title": "Festival Électro Night",
+        "category": "Musique",
+        "date": "2025-07-20",
+        "price": 55,
+        "image": "https://picsum.photos/800/600?random=5",
+        "location": "Parc des Expositions",
+        "description": "Une nuit complète dédiée à la musique électronique avec les meilleurs DJs.",
+        "availableSeats": 3000
+      },
+      {
+        "id": "6",
+        "title": "Championnat de Basketball - Finale",
+        "category": "Sport",
+        "date": "2025-08-15",
+        "price": 75,
+        "image": "https://picsum.photos/800/600?random=6",
+        "location": "Accor Arena, Paris",
+        "description": "La finale du championnat national de basketball.",
+        "availableSeats": 800
       }
-    ],
-  
-    "posts": [
-      { "id": 1, "title": "Premier post", "content": "Contenu du premier post" },
-      { "id": 2, "title": "Deuxième post", "content": "Contenu du deuxième post" }
     ]
   
   

@@ -1,102 +1,53 @@
-import { useState, useEffect } from 'react';
-import EventList from '../../components/events/EventList';
-import  EventFilter from '../../components/events/EventFilter';
-import  SearchBar  from '../../components/events/SearchBar';
-import  {useEvents } from '../../hooks/useEvents';
-import { IEvent } from '../../interfaces/Event.interface';
-import { IEventFilters } from '../../interfaces/EventsFilter.interface';
-import LoadingSpinner from '../../components/common/LoadingSpinner';
-import  ErrorMessage  from '../../components/common/ErrorMessage';
-
-const initialFilters: IEventFilters = {
-  searchQuery: '',
-  category: 'all',
-  dateFilter: 'all',
-  priceSort: 'none'
-};
+import { useEvents } from "../../hooks/useEvents";
+import { Link } from "react-router-dom";
+import LoadingSpinner from "../../components/common/LoadingSpinner";
+import ErrorMessage from "../../components/common/ErrorMessage";
 
 export const Home = () => {
   const { events, loading, error } = useEvents();
-  const [filteredEvents, setFilteredEvents] = useState<IEvent[]>([]);
-  const [filters, setFilters] = useState<IEventFilters>(initialFilters);
-
-  useEffect(() => {
-    if (!events) return;
-
-    let filtered = [...events];
-
-    // Appliquer les filtres
-    if (filters.searchQuery) {
-      filtered = filtered.filter(event => 
-        event.title.toLowerCase().includes(filters.searchQuery.toLowerCase())
-      );
-    }
-
-    if (filters.category !== 'all') {
-      filtered = filtered.filter(event => 
-        event.category === filters.category
-      );
-    }
-
-    const now = new Date();
-    if (filters.dateFilter === 'upcoming') {
-      filtered = filtered.filter(event => new Date(event.date) > now);
-    } else if (filters.dateFilter === 'past') {
-      filtered = filtered.filter(event => new Date(event.date) <= now);
-    }
-
-    if (filters.priceSort !== 'none') {
-      filtered.sort((a, b) => {
-        return filters.priceSort === 'asc' 
-          ? a.price - b.price 
-          : b.price - a.price;
-      });
-    }
-
-    setFilteredEvents(filtered);
-  }, [events, filters]);
-
-  const handleFilterChange = (newFilters: Partial<IEventFilters>) => {
-    setFilters(prev => ({
-      ...prev,
-      ...newFilters
-    }));
-  };
-
-  const handleEventSelect = (eventId: string) => {
-    // Navigation vers la page détaillée de l'événement
-    window.location.href = `/event/${eventId}`;
-  };
 
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorMessage message={error} />;
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">
-        Découvrez nos événements
+    <div className="space-y-8">
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+        Événements à venir
       </h1>
-
-      <div className="mb-8">
-        <SearchBar 
-          value={filters.searchQuery}
-          onChange={(value) => handleFilterChange({ searchQuery: value })}
-        />
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {events.map((event) => (
+          <div 
+            key={event.id}
+            className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105"
+          >
+            <img 
+              src={event.image} 
+              alt={event.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4 space-y-3">
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+                {event.title}
+              </h2>
+              <div className="space-y-2">
+                <p className="text-gray-600 dark:text-gray-300">
+                  {event.date} - {event.location}
+                </p>
+                <p className="text-lg font-bold text-primary-light dark:text-primary-dark">
+                  {event.price}€
+                </p>
+              </div>
+              <Link
+                to={`/event/${event.id}`}
+                className="block w-full text-center bg-primary-light hover:bg-primary-dark text-black hover:text-white dark:bg-primary-dark dark:hover:bg-primary-light dark:text-black dark:hover:text-white font-medium py-2 px-4 rounded-md transition-colors"
+              >
+                Voir Détails
+              </Link>
+            </div>
+          </div>
+        ))}
       </div>
-
-      <div className="mb-8">
-        <EventFilter 
-          filters={filters}
-          onFilterChange={handleFilterChange}
-        />
-      </div>
-
-      <EventList 
-        events={filteredEvents}
-        onEventSelect={handleEventSelect}
-      />
     </div>
   );
 };
-
-export default Home;
