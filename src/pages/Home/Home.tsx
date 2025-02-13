@@ -7,7 +7,6 @@ import ErrorMessage from "../../components/common/ErrorMessage";
 import { Link } from "react-router-dom";
 import SearchBar from "../../components/events/SearchBar";
 import Pagination from "../../components/common/Pagination";
-import Calendar from '../../components/calendar/Calendar';
 
 export const Home = () => {
   const { events, loading, error } = useEvents();
@@ -82,7 +81,6 @@ export const Home = () => {
         Événements à venir
       </h1>
       
-      <Calendar events={events} />
 
       <EventFilterBar
         filters={filters}

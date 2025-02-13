@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useEvents } from '../../hooks/useEvents';
 import { ProfileSelector } from '../../components/calendar/ProfileSelector';
 import { IEvent } from '../../interfaces/Event.interface';
+import { Link } from 'react-router-dom'; // Pour le bouton vers la page de l'événement
 
 const Calendar = () => {
   const [showProfileSelector, setShowProfileSelector] = useState(true);
@@ -9,6 +10,7 @@ const Calendar = () => {
   const { events } = useEvents();
   const [filteredEvents, setFilteredEvents] = useState<IEvent[]>([]);
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [selectedEvent, setSelectedEvent] = useState<IEvent | null>(null); // État pour l'événement sélectionné
 
   const months = [
     'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
@@ -78,6 +80,10 @@ const Calendar = () => {
 
   const handleYearChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setCurrentDate(new Date(parseInt(event.target.value), currentDate.getMonth()));
+  };
+
+  const handleEventClick = (event: IEvent) => {
+    setSelectedEvent(event);
   };
 
   return (
@@ -167,11 +173,8 @@ const Calendar = () => {
                                 ? 'bg-purple-100 dark:bg-purple-800'
                                 : 'bg-green-100 dark:bg-green-800'
                             }`}
-                            title={`${event.title}\n${new Date(event.date).toLocaleTimeString()}`}
+                            onClick={() => handleEventClick(event)}
                           >
-                            <div className="font-semibold">
-                              {new Date(event.date).toLocaleTimeString().substring(0, 5)}
-                            </div>
                             {event.title.length > 15 
                               ? `${event.title.substring(0, 15)}...` 
                               : event.title}
@@ -183,6 +186,39 @@ const Calendar = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Affichage de la prévisualisation de l'événement */}
+      {selectedEvent && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-lg w-full">
+            {/* Photo de l'événement */}
+            {selectedEvent.image && (
+              <img
+                src={selectedEvent.image}
+                alt={selectedEvent.title}
+                className="w-full h-48 object-cover rounded-lg mb-4"
+              />
+            )}
+            <h2 className="text-2xl font-bold mb-4">{selectedEvent.title}</h2>
+            <p className="mb-2"><strong>Date : </strong>{new Date(selectedEvent.date).toLocaleDateString()}</p>
+            <p className="mb-2"><strong>Catégorie : </strong>{selectedEvent.category}</p>
+            <p className="mb-2"><strong>Description : </strong>{selectedEvent.description}</p>
+            {/* Bouton vers la page de l'événement */}
+            <Link
+              to={`/event/${selectedEvent.id}`}
+              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            >
+              Voir plus de détails
+            </Link>
+            <button
+              onClick={() => setSelectedEvent(null)}
+              className="mt-4 ml-4 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600"
+            >
+              Fermer
+            </button>
           </div>
         </div>
       )}
