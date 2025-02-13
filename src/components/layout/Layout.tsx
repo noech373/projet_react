@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../../contexts/CartContext';
-import { FiShoppingCart, FiSun, FiMoon, FiHome } from 'react-icons/fi';
+import { FiShoppingCart, FiSun, FiMoon, FiHome, FiCalendar } from 'react-icons/fi';
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   const [darkMode, setDarkMode] = useState(false);
@@ -32,6 +32,18 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
               >
                 <FiHome className="w-5 h-5" />
                 <span className="hidden sm:block">Accueil</span>
+              </Link>
+              
+              <Link 
+                to="/calendar" 
+                className={`flex items-center space-x-2 ${
+                  location.pathname === '/calendar'
+                    ? 'text-primary-light dark:text-primary-dark'
+                    : 'text-gray-600 dark:text-gray-300'
+                }`}
+              >
+                <FiCalendar className="w-5 h-5" />
+                <span className="hidden sm:block">Calendrier</span>
               </Link>
             </div>
 
