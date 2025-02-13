@@ -34,7 +34,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ availableSeats, onRes
           value={name} 
           onChange={(e) => setName(e.target.value)} 
           required 
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white dark:border-gray-600 dark:placeholder-gray-400"
         />
       </div>
 
@@ -49,7 +49,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ availableSeats, onRes
           value={email} 
           onChange={(e) => setEmail(e.target.value)} 
           required 
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white dark:border-gray-600 dark:placeholder-gray-400"
         />
       </div>
 
@@ -65,7 +65,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ availableSeats, onRes
           value={seats} 
           onChange={(e) => setSeats(Number(e.target.value))} 
           required 
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white dark:border-gray-600 dark:placeholder-gray-400"
         />
       </div>
 
