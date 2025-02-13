@@ -28,8 +28,20 @@ export const useEvents = (): UseEventsReturn => {
   };
 
   useEffect(() => {
-    fetchEvents();
+    fetch('http://localhost:3000/events')
+      .then(response => response.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          setEvents(data);
+        } else {
+          setError('La réponse ne contient pas un tableau d\'événements.');
+        }
+        setLoading(false);
+      })
+      .catch(() => {
+        setError('Erreur lors de la récupération des événements.');
+        setLoading(false);
+      });
   }, []);
-
   return { events, loading, error, refetch: fetchEvents };
 };

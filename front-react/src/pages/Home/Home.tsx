@@ -1,4 +1,3 @@
-// src/pages/Home/Home.tsx
 import { useState, useEffect } from 'react';
 import EventList from '../../components/events/EventList';
 import  EventFilter from '../../components/events/EventFilter';

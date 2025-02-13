@@ -13,13 +13,16 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </Layout>
-    </Router>
+    <div>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </Layout>
+      </Router>
+      
+    </div>
   );
 }
 
