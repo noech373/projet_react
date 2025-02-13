@@ -14,7 +14,7 @@ interface EventDetailsProps {
 
 const EventDetails: React.FC<EventDetailsProps> = ({ event }) => {
   return (
-    <div>
+    <div className="text-gray-900">
       <img src={event.image} alt={event.title} />
       <h1>{event.title}</h1>
       <p>{event.description}</p>

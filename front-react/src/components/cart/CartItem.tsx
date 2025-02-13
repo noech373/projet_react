@@ -8,7 +8,7 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }: { item: CartItemInterfac
     };
 
     return (
-        <div style={styles.container}>
+        <div style={{...styles.container, color: '#000000'}}>
             <h3>{item.eventTitle}</h3>
             <p>Date: {item.eventDate}</p>
             <p>Prix unitaire: {item.price}€</p>
