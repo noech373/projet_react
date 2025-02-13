@@ -1,4 +1,8 @@
-import { EventCategory } from './EventsFilter.interface';
+export enum EventCategory {
+  CONCERT = 'concert',
+  CONFERENCE = 'conference',
+  WORKSHOP = 'workshop'
+}
 
 export interface IEvent {
   id: string;
@@ -6,6 +10,7 @@ export interface IEvent {
   description?: string;
   date: string;
   location: string;
+  organizer: string;
   category: EventCategory;
   price: number;
   image: string;
