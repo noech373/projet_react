@@ -3,6 +3,36 @@
     "events": [
       {
         "id": "1",
+        "title": "Festival Rock en Seine 2023",
+        "description": "Festival de musique rock avec Rage Against The Machine et Arctic Monkeys",
+        "date": "2023-08-25",
+        "location": "Domaine de Saint-Cloud, Paris",
+        "category": "concert",
+        "price": 89,
+        "image": "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=800"
+      },
+      {
+        "id": "2",
+        "title": "Roland Garros 2023",
+        "description": "Tournoi international de tennis sur terre battue",
+        "date": "2023-06-10",
+        "location": "Stade Roland Garros, Paris",
+        "category": "sport",
+        "price": 145,
+        "image": "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=800"
+      },
+      {
+        "id": "3",
+        "title": "Molière - Le Malade Imaginaire",
+        "description": "Pièce classique à la Comédie Française",
+        "date": "2023-12-15",
+        "location": "Comédie Française, Paris",
+        "category": "theatre",
+        "price": 65,
+        "image": "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800"
+      },
+      {
+        "id": "4",
         "title": "Festival Jazz à la Seine",
         "category": "Musique",
         "date": "2025-03-01",
@@ -13,7 +43,7 @@
         "availableSeats": 200
       },
       {
-        "id": "2",
+        "id": "5",
         "title": "Marathon de Paris",
         "category": "Sport",
         "date": "2025-04-10",
@@ -24,7 +54,7 @@
         "availableSeats": 1000
       },
       {
-        "id": "3",
+        "id": "6",
         "title": "Concert Symphonique - Mozart",
         "category": "Musique",
         "date": "2025-05-15",
@@ -35,7 +65,7 @@
         "availableSeats": 150
       },
       {
-        "id": "4",
+        "id": "7",
         "title": "Roland Garros 2025 - Finale",
         "category": "Sport",
         "date": "2025-06-08",
@@ -46,7 +76,7 @@
         "availableSeats": 500
       },
       {
-        "id": "5",
+        "id": "8",
         "title": "Festival Électro Night",
         "category": "Musique",
         "date": "2025-07-20",
@@ -57,7 +87,7 @@
         "availableSeats": 3000
       },
       {
-        "id": "6",
+        "id": "9",
         "title": "Championnat de Basketball - Finale",
         "category": "Sport",
         "date": "2025-08-15",
@@ -66,6 +96,237 @@
         "location": "Accor Arena, Paris",
         "description": "La finale du championnat national de basketball.",
         "availableSeats": 800
+      },
+      {
+        "id": "10",
+        "title": "Exposition Van Gogh",
+        "description": "Rétrospective des œuvres majeures de Vincent Van Gogh",
+        "date": "2023-11-20",
+        "location": "Musée d'Orsay, Paris",
+        "category": "theatre",
+        "price": 22,
+        "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800",
+        "availableSeats": 8000
+      },
+      {
+        "id": "11",
+        "title": "Cirque du Soleil - Alegría",
+        "description": "Spectacle emblématique du Cirque du Soleil",
+        "date": "2023-09-15",
+        "location": "La Défense Arena, Paris",
+        "category": "theatre",
+        "price": 95,
+        "image": "https://images.unsplash.com/photo-1563841930606-67e2bce48b78?w=800",
+        "availableSeats": 1236
+      },
+      {
+        "id": "12",
+        "title": "Festival de Jazz Marseille",
+        "description": "Festival international de jazz",
+        "date": "2023-07-05",
+        "location": "Vieux-Port, Marseille",
+        "category": "concert",
+        "price": 60,
+        "image": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800",
+        "availableSeats": 487
+      },
+      {
+        "id": "13",
+        "title": "Tour de France 2023 - Etape Finale",
+        "description": "Dernière étape sur les Champs-Élysées",
+        "date": "2023-07-23",
+        "location": "Champs-Élysées, Paris",
+        "category": "sport",
+        "price": 30,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzGmKfc7sXwNKChgdbmtTikaxw-JpnXmdz9yIc_EGiRfDAk6SAGv5FKQueXNB5dmjUn6g&usqp=CAU",
+        "availableSeats": 1000000
+      },
+      {   
+        "id": "14",
+        "title": "Hellfest 2025",
+        "description": "Le plus grand festival de metal en France",
+        "date": "2025-06-20",
+        "location": "Clisson",
+        "category": "concert",
+        "price": 115,
+        "image": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800",
+        "availableSeats": 21000
+      },
+      {
+        "id": "15",
+        "title": "Opéra Carmen",
+        "description": "L'œuvre mythique de Bizet",
+        "date": "2025-09-10",
+        "location": "Opéra Garnier, Paris",
+        "category": "theatre",
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1580809361436-42a7ec204889?w=800",
+        "availableSeats": 100
+      },
+      {
+        "id": "16",
+        "title": "Championnat d'Europe d'Athlétisme",
+        "description": "Compétition européenne d'athlétisme",
+        "date": "2025-08-12",
+        "location": "Stade de France, Saint-Denis",
+        "category": "sport",
+        "price": 85,
+        "image": "https://images.unsp lash.com/photo-1552674605-db6ffd4facb5?w=800",
+        "availableSeats": 85000
+      },
+      {
+        "id": "17",
+        "title": "Festival Lumière Lyon",
+        "description": "Festival des arts numériques et lumineux",
+        "date": "2023-12-08",
+        "location": "Place Bellecour, Lyon",
+        "category": "theatre",
+        "price": 0,
+        "image": "https://images.unsplash.com/photo-1550340499-a6c60fc8287c?w=800",
+        "availableSeats": 21000
+      },
+      {
+        "id": "18",
+        "title": "Les Vieilles Charrues 2025",
+        "description": "Festival de musique en Bretagne",
+        "date": "2025-07-18",
+        "location": "Carhaix",
+        "category": "concert",
+        "price": 95,
+        "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800",
+        "availableSeats": 2100
+      },
+      {
+        "id": "19",
+        "title": "Open Sud de France",
+        "description": "Tournoi international de tennis",
+        "date": "2025-02-03",
+        "location": "Arena Sud de France, Montpellier",
+        "category": "sport",
+        "price": 70,
+        "image": "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=800",
+        "availableSeats": 4100
+      },
+      {
+        "id": "20",
+        "title": "Solidays 2025",
+        "description": "Festival de musique solidaire",
+        "date": "2025-06-27",
+        "location": "Hippodrome de Longchamp, Paris",
+        "category": "concert",
+        "price": 75,
+        "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800",
+        "availableSeats": 96000
+      },
+      {
+        "id": "21",
+        "title": "Mondial de l'Auto",
+        "description": "Salon international de l'automobile",
+        "date": "2023-10-17",
+        "location": "Paris Expo Porte de Versailles",
+        "category": "theatre",
+        "price": 25,
+        "image": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800",
+        "availableSeats": 1000
+      },
+      {
+        "id": "22",
+        "title": "Ligue des Champions - Finale 2025",
+        "description": "Finale de la plus prestigieuse compétition européenne",
+        "date": "2025-05-31",
+        "location": "Stade de France, Saint-Denis",
+        "category": "sport",
+        "price": 250,
+        "image": "https://static.cnews.fr/sites/default/files/ligue_des_champions_ou_et_quand_aura_lieu_la_finale_2023__6463d2ca51ece.jpg",
+        "availableSeats": 100000
+      },
+      {
+        "id": "23",
+        "title": "Festival d'Avignon 2025",
+        "description": "Le plus grand festival de théâtre au monde",
+        "date": "2025-07-05",
+        "location": "Avignon",
+        "category": "theatre",
+        "price": 45,
+        "image": "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800",
+        "availableSeats": 2500
+      },
+      {
+        "id": "24",
+        "title": "Paris Games Week 2023",
+        "description": "Salon du jeu vidéo",
+        "date": "2023-11-01",
+        "location": "Paris Expo Porte de Versailles",
+        "category": "theatre",
+        "price": 20,
+        "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800",
+        "availableSeats": 4000
+      },
+      {
+        "id": "25",
+        "title": "Techno Parade",
+        "description": "Défilé de chars musicaux électro",
+        "date": "2023-09-24",
+        "location": "Place de la Nation, Paris",
+        "category": "concert",
+        "price": 0,
+        "image": "https://images.unsplash.com/photo-1574154894072-18ba0d48321b?w=800",
+        "availableSeats": 1000
+      },
+      {
+        "id": "26",
+        "title": "24 Heures du Mans 2025",
+        "description": "Course d'endurance automobile mythique",
+        "date": "2025-06-14",
+        "location": "Circuit des 24 Heures, Le Mans",
+        "category": "sport",
+        "price": 95,
+        "image": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800",
+        "availableSeats": 80000
+      },
+      {
+        "id": "27",
+        "title": "Nuit des Musées 2023",
+        "description": "Ouverture nocturne des musées",
+        "date": "2023-05-13",
+        "location": "Toute la France",
+        "category": "theatre",
+        "price": 0,
+        "image": "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800",
+        "availableSeats": 8700
+      },
+      {
+        "id": "28",
+        "title": "Main Square Festival",
+        "description": "Festival de musique rock et pop",
+        "date": "2025-07-04",
+        "location": "Citadelle d'Arras",
+        "category": "concert",
+        "price": 85,
+        "image": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800",
+        "availableSeats": 8700
+      },
+      {
+        "id": "29",
+        "title": "Championnats du Monde de Judo",
+        "description": "Compétition internationale de judo",
+        "date": "2025-08-24",
+        "location": "AccorHotels Arena, Paris",
+        "category": "sport",
+        "price": 60,
+        "image": "https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800",
+        "availableSeats": 8700
+      },
+      {
+        "id": "30",
+        "title": "Fête des Lumières Lyon",
+        "description": "Festival historique des illuminations",
+        "date": "2025-12-08",
+        "location": "Lyon",
+        "category": "theatre",
+        "price": 0,
+        "image": "https://www.lyonmag.com/media/images/thumb/870x489_6569b0d241879-fdl-actu.webp",
+        "availableSeats": 87700  
       }
     ]
   
