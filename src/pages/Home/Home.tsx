@@ -81,6 +81,7 @@ export const Home = () => {
         Événements à venir
       </h1>
       
+
       <EventFilterBar
         filters={filters}
         onFilterChange={(newFilters) => setFilters(prev => ({ ...prev, ...newFilters }))}
