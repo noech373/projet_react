@@ -185,8 +185,10 @@ const Calendar = () => {
                             ? 'bg-purple-100 dark:bg-purple-800'
                             : 'bg-green-100 dark:bg-green-800'
                         }`}
+                        onClick={() => handleEventClick(event)}
                         title={event.title}
                         >
+                            
                         <span className="whitespace-normal text-overflow-clip">{event.title}</span>
                         </div>
                     ))}
