@@ -1,24 +1,60 @@
+import { useState, useMemo } from "react";
 import { useEvents } from "../../hooks/useEvents";
-import { Link } from "react-router-dom";
+import EventFilterBar from "../../components/events/EventFilterBar";
+import { IEventFilters } from "../../interfaces/EventsFilter.interface";
 import LoadingSpinner from "../../components/common/LoadingSpinner";
 import ErrorMessage from "../../components/common/ErrorMessage";
+import { Link } from "react-router-dom";
 import SearchBar from "../../components/events/SearchBar";
-import { useState, useMemo } from "react";
 
 export const Home = () => {
   const { events, loading, error } = useEvents();
-  const [searchQuery, setSearchQuery] = useState("");
+  const [filters, setFilters] = useState<IEventFilters>({
+    searchQuery: "",
+    category: "all",
+    dateFilter: "all",
+    priceSort: "none"
+  });
 
   const filteredEvents = useMemo(() => {
-    if (!searchQuery.trim()) return events;
-    
-    const query = searchQuery.toLowerCase();
-    return events.filter((event) => 
-      event.title.toLowerCase().includes(query) ||
-      event.description?.toLowerCase().includes(query) ||
-      event.location?.toLowerCase().includes(query)
-    );
-  }, [events, searchQuery]);
+    let result = [...events];
+
+    // Amélioration du filtre par recherche pour chercher dans plusieurs champs
+    if (filters.searchQuery) {
+      const query = filters.searchQuery.toLowerCase();
+      result = result.filter((event) =>
+        event.title.toLowerCase().includes(query) ||
+        event.description?.toLowerCase().includes(query) ||
+        event.location?.toLowerCase().includes(query)
+      );
+    }
+
+    // Filtre par catégorie
+    if (filters.category !== "all") {
+      result = result.filter((event) => event.category === filters.category);
+    }
+
+    // Filtre par date
+    const now = new Date();
+    if (filters.dateFilter === "upcoming") {
+      result = result.filter((event) => new Date(event.date) > now);
+    } else if (filters.dateFilter === "past") {
+      result = result.filter((event) => new Date(event.date) < now);
+    }
+
+    // Tri par prix
+    if (filters.priceSort !== "none") {
+      result.sort((a, b) => {
+        if (filters.priceSort === "asc") {
+          return a.price - b.price;
+        } else {
+          return b.price - a.price;
+        }
+      });
+    }
+
+    return result;
+  }, [events, filters]);
 
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorMessage message={error} />;
@@ -29,8 +65,16 @@ export const Home = () => {
         Événements à venir
       </h1>
       
+      <EventFilterBar
+        filters={filters}
+        onFilterChange={(newFilters) => setFilters(prev => ({ ...prev, ...newFilters }))}
+      />
+
       <div className="max-w-2xl mx-auto mb-8">
-        <SearchBar value={searchQuery} onChange={setSearchQuery} />
+        <SearchBar 
+          value={filters.searchQuery} 
+          onChange={(value: string) => setFilters({ ...filters, searchQuery: value })} 
+        />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -69,3 +113,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default Home;

@@ -1,10 +1,12 @@
-import { EventCategory } from "./Event.interface";
+export type EventCategory = "all" | "concert" | "theatre" | "sport";
+export type DateFilter = "all" | "upcoming" | "past";
+export type PriceSort = "none" | "asc" | "desc";
 
 export interface IEventFilters {
     searchQuery: string;
-    category: EventCategory | 'all';
-    dateFilter: 'all' | 'upcoming' | 'past';
-    priceSort: 'none' | 'asc' | 'desc';
+    category: EventCategory;
+    dateFilter: DateFilter;
+    priceSort: PriceSort;
   }
 
 export default IEventFilters;
