@@ -1,7 +1,6 @@
 export enum EventCategory {
-  CONCERT = 'concert',
-  CONFERENCE = 'conference',
-  WORKSHOP = 'workshop'
+  CONCERT = 'music',
+  SPORT = 'sport',
 }
 
 export interface IEvent {

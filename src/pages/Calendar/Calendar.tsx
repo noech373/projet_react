@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import { useEvents } from '../../hooks/useEvents';
 import { ProfileSelector } from '../../components/calendar/ProfileSelector';
 import { IEvent } from '../../interfaces/Event.interface';
-import { Link } from 'react-router-dom'; // Pour le bouton vers la page de l'événement
+import CalendarHeader from '../../components/calendar/CalendarHeader';
+import CalendarGrid from '../../components/calendar/CalendarGrid';
+import EventPreview from '../../components/calendar/EventPreview';
 
 const Calendar = () => {
   const [showProfileSelector, setShowProfileSelector] = useState(true);
@@ -12,14 +14,11 @@ const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedEvent, setSelectedEvent] = useState<IEvent | null>(null); // État pour l'événement sélectionné
 
-  const months = [
-    'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
-    'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'
-  ];
+  // State management only - UI components have been moved to separate files
 
   useEffect(() => {
     if (selectedCategory) {
-      const filtered = events.filter(event => event.category === selectedCategory);
+      const filtered = events.filter(event => event.category.toLowerCase() === selectedCategory.toLowerCase());
       setFilteredEvents(filtered);
     }
   }, [selectedCategory, events]);
@@ -29,42 +28,7 @@ const Calendar = () => {
     setShowProfileSelector(false);
   };
 
-  const groupEventsByDate = () => {
-    const grouped = new Map<string, IEvent[]>();
-    filteredEvents.forEach(event => {
-      const date = new Date(event.date).toISOString().split('T')[0];
-      if (!grouped.has(date)) {
-        grouped.set(date, []);
-      }
-      grouped.get(date)?.push(event);
-    });
-    return grouped;
-  };
-
-  const getDaysInMonth = (date: Date) => {
-    const year = date.getFullYear();
-    const month = date.getMonth();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-    const firstDayOfMonth = new Date(year, month, 1).getDay();
-    
-    const days = [];
-    // Ajouter les jours du mois précédent
-    for (let i = 0; i < firstDayOfMonth; i++) {
-      days.push(null);
-    }
-    // Ajouter les jours du mois en cours
-    for (let i = 1; i <= daysInMonth; i++) {
-      days.push(new Date(year, month, i));
-    }
-    return days;
-  };
-
-  const getEventsForDate = (date: Date) => {
-    if (!date) return [];
-    return filteredEvents.filter(event => 
-      new Date(event.date).toISOString().split('T')[0] === date.toISOString().split('T')[0]
-    );
-  };
+  // These functions have been moved to the CalendarGrid component
 
   const handlePreviousMonth = () => {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1));
@@ -96,143 +60,32 @@ const Calendar = () => {
 
       {selectedCategory && (
         <div className="space-y-6">
-          <div className="flex justify-between items-center mb-6">
-            <h1 className="text-3xl font-bold">
-              Calendrier des {selectedCategory === 'Musique' ? 'Concerts' : 'Événements Sportifs'}
-            </h1>
-            <button
-              onClick={() => setSelectedCategory(selectedCategory === 'Musique' ? 'Sport' : 'Musique')}
-              className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
-                selectedCategory === 'Musique'
-                  ? 'bg-green-500 hover:bg-green-600 text-white'
-                  : 'bg-purple-500 hover:bg-purple-600 text-white'
-              }`}
-            >
-              Basculer vers {selectedCategory === 'Musique' ? 'Sport' : 'Concerts'}
-            </button>
-          </div>
+          <CalendarHeader 
+            currentDate={currentDate}
+            selectedCategory={selectedCategory}
+            onPreviousMonth={handlePreviousMonth}
+            onNextMonth={handleNextMonth}
+            onMonthChange={handleMonthChange}
+            onYearChange={handleYearChange}
+            onCategoryToggle={() => setSelectedCategory(selectedCategory === 'Musique' ? 'Sport' : 'Musique')}
+          />
 
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-            <div className="flex items-center justify-between mb-4">
-              <button
-                onClick={handlePreviousMonth}
-                className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
-              >
-                ←
-              </button>
-              
-              <div className="flex gap-2">
-                <select
-                  value={currentDate.getMonth()}
-                  onChange={handleMonthChange}
-                  className="bg-white dark:bg-gray-700 border rounded p-1"
-                >
-                  {months.map((month, index) => (
-                    <option key={month} value={index}>{month}</option>
-                  ))}
-                </select>
-
-                <select
-                  value={currentDate.getFullYear()}
-                  onChange={handleYearChange}
-                  className="bg-white dark:bg-gray-700 border rounded p-1"
-                >
-                  {Array.from({ length: 10 }, (_, i) => currentDate.getFullYear() - 5 + i).map(year => (
-                    <option key={year} value={year}>{year}</option>
-                  ))}
-                </select>
-              </div>
-
-              <button
-                onClick={handleNextMonth}
-                className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
-              >
-                →
-              </button>
-            </div>
-
-            <div className="grid grid-cols-7 gap-1">
-              {['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'].map(day => (
-                <div key={day} className="text-center font-semibold p-2">
-                  {day}
-                </div>
-              ))}
-              
-              {getDaysInMonth(currentDate).map((date, index) => (
-                <div
-                  key={index}
-                  className={`min-h-[100px] border p-1 relative ${
-                    date 
-                      ? 'bg-gray-50 dark:bg-gray-700' 
-                      : 'bg-gray-100 dark:bg-gray-600'
-                  } ${
-                    date?.toDateString() === new Date().toDateString()
-                      ? 'ring-2 ring-blue-500'
-                      : ''
-                  }`}
-                >
-                  {date && (
-                    <>
-                      <div className="text-right text-sm mb-1">
-                    {date.getDate()}
-                    </div>
-                    <div className="space-y-1 max-h-[80px] overflow-y-auto">
-                    {getEventsForDate(date).map(event => (
-                        <div
-                        key={event.id}
-                        className={`text-xs p-1 rounded cursor-pointer hover:opacity-80 ${
-                            event.category === 'Musique'
-                            ? 'bg-purple-100 dark:bg-purple-800'
-                            : 'bg-green-100 dark:bg-green-800'
-                        }`}
-                        onClick={() => handleEventClick(event)}
-                        title={event.title}
-                        >
-                            
-                        <span className="whitespace-normal text-overflow-clip">{event.title}</span>
-                        </div>
-                    ))}
-                    </div>
-                    </>
-                  )}
-                </div>
-              ))}
-            </div>
+            <CalendarGrid 
+              currentDate={currentDate}
+              filteredEvents={filteredEvents}
+              onEventClick={handleEventClick}
+            />
           </div>
         </div>
       )}
 
-      {/* Affichage de la prévisualisation de l'événement */}
+      {/* Event preview modal */}
       {selectedEvent && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-lg w-full">
-            {/* Photo de l'événement */}
-            {selectedEvent.image && (
-              <img
-                src={selectedEvent.image}
-                alt={selectedEvent.title}
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
-            )}
-            <h2 className="text-2xl font-bold mb-4">{selectedEvent.title}</h2>
-            <p className="mb-2"><strong>Date : </strong>{new Date(selectedEvent.date).toLocaleDateString()}</p>
-            <p className="mb-2"><strong>Catégorie : </strong>{selectedEvent.category}</p>
-            <p className="mb-2"><strong>Description : </strong>{selectedEvent.description}</p>
-            {/* Bouton vers la page de l'événement */}
-            <Link
-              to={`/event/${selectedEvent.id}`}
-              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-            >
-              Voir plus de détails
-            </Link>
-            <button
-              onClick={() => setSelectedEvent(null)}
-              className="mt-4 ml-4 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600"
-            >
-              Fermer
-            </button>
-          </div>
-        </div>
+        <EventPreview
+          event={selectedEvent} 
+          onClose={() => setSelectedEvent(null)}
+        />
       )}
     </div>
   );

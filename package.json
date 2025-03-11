@@ -14,6 +14,7 @@
     "@tailwindcss/postcss": "^4.0.6",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.4.2",
+    "front-react": "file:",
     "json-server": "^1.0.0-beta.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
