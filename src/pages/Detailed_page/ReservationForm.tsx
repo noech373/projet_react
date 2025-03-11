@@ -122,7 +122,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ availableSeats, onRes
         disabled={showSuccess}
         className="w-full px-4 py-3 mt-6 font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors disabled:opacity-50"
       >
-        {showSuccess ? "Réservation en cours..." : "Réserver maintenant"}
+        {showSuccess ? "Ajout en cours..." : "Ajouter au panier"}
       </button>
     </form>
   );

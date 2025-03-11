@@ -13,4 +13,5 @@ export interface IEvent {
   category: EventCategory;
   price: number;
   image: string;
+  availableSeats: number;
 }
