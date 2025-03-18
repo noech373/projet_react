@@ -1,6 +1,6 @@
-# Booking System
+# Booking System with React
 
-## 📝 Description
+## 📝 Description 
 Web application for booking management developed with Node.js. This application allows efficient management of room reservations, resources, or events.
 
 ## 🚀 Features
