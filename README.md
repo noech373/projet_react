@@ -1,31 +1,70 @@
-# Event Booking Platform
+# Booking System
 
-A modern web application for browsing and booking events, built with React, TypeScript, and Tailwind CSS.
+## 📝 Description
+Web application for booking management developed with Node.js. This application allows efficient management of room reservations, resources, or events.
 
-## Features
+## 🚀 Features
+- User authentication system
+- Booking management (create, modify, delete)
+- Interactive calendar
+- Admin interface
+- Email notifications
+- Responsive design
 
-- 🎫 Browse upcoming events
-- 🔍 Search and filter events by category
-- 🌓 Dark/Light mode support
-- 🛒 Shopping cart functionality
-- 📱 Responsive design
-- 🎨 Modern UI with Tailwind CSS
+## 🛠 Tech Stack
+- Node.js
+- Express.js
+- MongoDB
+- React.js
+- Bootstrap
+- JWT for authentication
 
-## Tech Stack
+## ⚙️ Installation
 
-- React 19
-- TypeScript
-- Tailwind CSS
-- Vite
-- React Router DOM
-- React Icons
-- JSON Server (for mock API)
+1. Clone the repository
+```bash
+git clone [REPO_URL]
+cd projet-réservation
+```
 
-## Prerequisites
+2. Install dependencies
+```bash
+npm install
+```
 
-- Node.js (v16 or higher)
-- npm or yarn
+3. Configure environment variables
+Create a `.env` file in the root directory and add:
+```
+PORT=3000
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_secret
+```
 
-## Installation
+4. Launch the application
+```bash
+npm run dev
+```
 
-1. Clone the repository:
+## 🔧 Configuration
+- Default port: 3000
+- Database: MongoDB
+- Email configuration: SMTP
+
+## 👥 Contributing
+Contributions are welcome! To contribute:
+1. Fork the project
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+## 📄 License
+This project is under MIT license. See `LICENSE` file for more details.
+
+## 📞 Contact
+For any questions or suggestions, feel free to open an issue or contact me directly.
+
+## 🙏 Acknowledgments
+- Development team
+- Contributors
+- Users for their feedback
