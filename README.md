@@ -62,9 +62,7 @@ Contributions are welcome! To contribute:
 This project is under MIT license. See `LICENSE` file for more details.
 
 ## 📞 Contact
-For any questions or suggestions, feel free to open an issue or contact me directly.
+For any questions or suggestions, feel free to open an issue or contact us directly.
 
-## 🙏 Acknowledgments
-- Development team
-- Contributors
-- Users for their feedback
+## Team
+Chabanon Noé, Julienne Baptiste, Catros Thomas, 2025
