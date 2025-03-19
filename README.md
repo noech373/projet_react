@@ -1,29 +1,32 @@
 # Booking System with React
 
 ## 📝 Description 
-Web application for booking management developed with Node.js. This application allows efficient management of room reservations, resources, or events.
+Web application for booking management developed with React. This application allows efficient management of room reservations, resources, or events using a JSON file for data storage.
 
 ## 🚀 Features
 - User authentication system
 - Booking management (create, modify, delete)
 - Interactive calendar
-- Admin interface
-- Email notifications
 - Responsive design
 
 ## 🛠 Tech Stack
-- Node.js
-- Express.js
-- MongoDB
-- React.js
-- Bootstrap
-- JWT for authentication
+- React 19 with TypeScript
+- Vite 6
+- Tailwind CSS
+- JSON Server
+- React Router DOM
+- Framer Motion
+- Date-fns
+- Heroicons
+- React Icons
+- ESLint
+- TypeScript 5.7
 
 ## ⚙️ Installation
 
 1. Clone the repository
 ```bash
-git clone [REPO_URL]
+git clone https://github.com/noech373/projet_react
 cd projet-réservation
 ```
 
@@ -32,22 +35,14 @@ cd projet-réservation
 npm install
 ```
 
-3. Configure environment variables
-Create a `.env` file in the root directory and add:
-```
-PORT=3000
-MONGODB_URI=your_mongodb_uri
-JWT_SECRET=your_secret
-```
-
-4. Launch the application
+3. Launch the application
 ```bash
 npm run dev
 ```
 
 ## 🔧 Configuration
 - Default port: 3000
-- Database: MongoDB
+- Data storage: JSON file
 - Email configuration: SMTP
 
 ## 👥 Contributing
@@ -59,7 +54,7 @@ Contributions are welcome! To contribute:
 5. Open a Pull Request
 
 ## 📄 License
-This project is under MIT license. See `LICENSE` file for more details.
+This project is under MIT and ISEN license. 
 
 ## 📞 Contact
 For any questions or suggestions, feel free to open an issue or contact us directly.
